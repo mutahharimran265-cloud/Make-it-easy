@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", serif;
+  
+  --color-ink: #1A1715;
+  --color-vanilla: #FCFAF7;
+  --color-tomato: #D03D29;
+  --color-basil: #2B4C32;
+  --color-honey: #C97A1E;
+  --color-cream: #FFFFFF;
+  --color-border: rgba(26,23,21,0.08);
+}
+
+body {
+  background-color: var(--color-vanilla);
+  color: var(--color-ink);
+  @apply font-sans antialiased text-base selection:bg-honey/20;
+}
+
+.recipe-card {
+  @apply bg-cream rounded-[24px] overflow-hidden transition-all duration-500 border border-border flex flex-col h-full bg-clip-border;
+}
+
+.recipe-card:hover {
+  @apply shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] -translate-y-2 border-border/50;
+}
+
+.btn-chef-primary {
+  @apply bg-ink text-white px-8 py-4 rounded-2xl font-semibold text-base shadow-[0_15px_30px_-10px_rgba(26,23,21,0.5)] transition-all duration-300 hover:bg-ink/90 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(26,23,21,0.6)] active:scale-95 disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none;
+}
+
+.btn-chef-secondary {
+  @apply bg-white text-ink border border-border px-6 py-3 rounded-2xl font-semibold transition-all hover:border-ink hover:shadow-md active:scale-95;
+}
+
+.input-chef {
+  @apply bg-white border border-border rounded-2xl px-5 py-4 outline-none focus:border-ink focus:ring-4 focus:ring-ink/5 transition-all duration-300 w-full font-medium placeholder:text-gray-400 shadow-sm;
+}
+
+.chef-badge {
+  @apply bg-vanilla text-ink px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-[0.15em] border border-border;
+}
+
